@@ -11,6 +11,8 @@ import UIKit
 
 class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
+    @IBOutlet weak var shareMomentButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
@@ -60,6 +62,23 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         presentViewController(imagePicker, animated: true, completion: nil);
+    }
+    
+    @IBAction func shareMoment(sender: AnyObject) {
+        
+        let message = "My sharedMoment"
+        let savedImage = self.generateMemedImage()
+        
+
+        let acitivityVC = UIActivityViewController.init(activityItems: [message, savedImage], applicationActivities: nil)
+        self.presentViewController(acitivityVC, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func cancel(sender: AnyObject) {
+    
+    
+    
     }
     
     // MARK: Observers
@@ -141,8 +160,5 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         
         return memedImage
     }
-    
-    
-    
 }
 

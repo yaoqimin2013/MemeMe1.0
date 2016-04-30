@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g5M-jW-0fN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -22,12 +22,12 @@
                                 <rect key="frame" x="20" y="0.0" width="560" height="556"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbM-9Q-YAC">
-                                <rect key="frame" x="259.5" y="445" width="80" height="30"/>
+                                <rect key="frame" x="260" y="445" width="80" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDm-kI-BYs">
-                                <rect key="frame" x="275" y="67" width="49" height="30"/>
+                                <rect key="frame" x="275" y="111" width="49" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="131" id="lc4-Cv-oUd"/>
                                 </constraints>
@@ -97,14 +97,46 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="dX0-0H-yVM">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="6yg-Yd-jY5">
+                            <connections>
+                                <action selector="shareMoment:" destination="BYZ-38-t0r" id="0g5-aH-QLR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="uop-hY-au0">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="R2d-Mm-iHh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomTextField" destination="mbM-9Q-YAC" id="aYg-hQ-pjg"/>
                         <outlet property="cameraButton" destination="P87-3s-JjU" id="Sb1-UC-7I1"/>
+                        <outlet property="cancelButton" destination="uop-hY-au0" id="t56-75-Lrv"/>
                         <outlet property="imagePickerView" destination="2YL-0P-JuB" id="7ga-X9-NA3"/>
+                        <outlet property="shareMomentButton" destination="6yg-Yd-jY5" id="CbG-Qc-eRt"/>
                         <outlet property="topTextField" destination="fDm-kI-BYs" id="CCM-wT-peo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1104" y="389"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cee-qJ-kvT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g5M-jW-0fN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PnL-8P-3ZH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wxg-Rp-tfx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRm-Hg-qbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="292" y="389"/>
         </scene>
