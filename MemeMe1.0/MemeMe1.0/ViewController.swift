@@ -30,6 +30,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.delegate = self
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -84,10 +85,12 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     func keyboardWillShow(notification: NSNotification) {
         self.view.frame.origin.y -= getKeyboardHeight(notification)
+        self.topTextField.userInteractionEnabled = false
     }
     
     func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y += getKeyboardHeight(notification)
+        self.topTextField.userInteractionEnabled = true
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -100,7 +103,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imagePickerView.image = image
+            self.imagePickerView.image = image
         }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -112,7 +115,34 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     // MARK: TextField Delegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        self.bottomTextField.resignFirstResponder()
+        
         return true
     }
+    
+    // MARK: Image combine
+    
+    func save() {
+        // Create the meme
+        // need to add savedImage here
+        let meme = Memo(topText: self.topTextField.text!, bottomText: self.bottomTextField.text!, originalImage: self.imagePickerView.image, savedImage: self.generateMemedImage())
+        print(meme)
+    }
+    
+    func generateMemedImage() -> UIImage {
+        // hide toolbar and navigationbar
+        
+        // render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return memedImage
+    }
+    
+    
+    
 }
 

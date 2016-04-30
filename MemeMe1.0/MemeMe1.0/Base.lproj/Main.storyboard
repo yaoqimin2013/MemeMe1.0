@@ -22,17 +22,22 @@
                                 <rect key="frame" x="20" y="0.0" width="560" height="556"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbM-9Q-YAC">
-                                <rect key="frame" x="234" y="445" width="131" height="30"/>
+                                <rect key="frame" x="259.5" y="445" width="80" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDm-kI-BYs">
-                                <rect key="frame" x="234" y="67" width="131" height="30"/>
+                                <rect key="frame" x="275" y="67" width="49" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="131" id="lc4-Cv-oUd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lc4-Cv-oUd"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qdo-UF-he8">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
@@ -53,6 +58,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2YL-0P-JuB" firstAttribute="centerX" secondItem="mbM-9Q-YAC" secondAttribute="centerX" id="3AW-0K-PvY"/>
                             <constraint firstItem="2YL-0P-JuB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4g6-V1-fEV"/>
                             <constraint firstItem="Qdo-UF-he8" firstAttribute="top" secondItem="2YL-0P-JuB" secondAttribute="bottom" constant="192" id="9Ai-iX-MFd"/>
                             <constraint firstItem="Qdo-UF-he8" firstAttribute="top" secondItem="2YL-0P-JuB" secondAttribute="bottom" constant="556" id="Bp5-Es-Mkc"/>
@@ -82,8 +88,10 @@
                                 <exclude reference="Hwm-9l-71e"/>
                                 <exclude reference="U09-fJ-X0L"/>
                                 <exclude reference="VJd-vl-JMn"/>
+                                <exclude reference="iQu-v2-e3o"/>
                                 <exclude reference="mwn-Kv-7WD"/>
                                 <exclude reference="sBj-tt-FUh"/>
+                                <exclude reference="UYI-RX-MH3"/>
                                 <exclude reference="9Ai-iX-MFd"/>
                                 <exclude reference="Bp5-Es-Mkc"/>
                             </mask>
