@@ -18,6 +18,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    var toSaveImage: UIImage? = nil
+    
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.whiteColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -31,6 +33,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         super.viewDidLoad()
         
         topTextField.defaultTextAttributes = memeTextAttributes
+        topTextField.delegate = self
+        
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.delegate = self
     }
@@ -67,12 +71,14 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     @IBAction func shareMoment(sender: AnyObject) {
         
         let message = "My sharedMoment"
-        let savedImage = self.generateMemedImage()
-        
-
-        let acitivityVC = UIActivityViewController.init(activityItems: [message, savedImage], applicationActivities: nil)
-        self.presentViewController(acitivityVC, animated: true, completion: nil)
-        
+        if let image: UIImage = self.generateMemedImage() {
+            self.toSaveImage = image
+            let acitivityVC = UIActivityViewController.init(activityItems: [message, image], applicationActivities: nil)
+            acitivityVC.completionWithItemsHandler = {acitivty, success, items, error in
+                self.save()
+            }
+            self.presentViewController(acitivityVC, animated: true, completion: nil)
+        }
     }
     
     @IBAction func cancel(sender: AnyObject) {
@@ -103,13 +109,17 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
-        self.topTextField.userInteractionEnabled = false
+        if self.bottomTextField.isFirstResponder() {
+            self.view.frame.origin.y -= getKeyboardHeight(notification)
+            self.topTextField.userInteractionEnabled = false
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y += getKeyboardHeight(notification)
-        self.topTextField.userInteractionEnabled = true
+        if self.bottomTextField.isFirstResponder() {
+            self.view.frame.origin.y += getKeyboardHeight(notification)
+            self.topTextField.userInteractionEnabled = true
+        }
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -135,13 +145,18 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        self.bottomTextField.resignFirstResponder()
+        if self.topTextField.isFirstResponder() {
+            self.topTextField.resignFirstResponder()
+        }
+        
+        if self.bottomTextField.isFirstResponder() {
+            self.bottomTextField.resignFirstResponder()
+        }
         
         return true
     }
     
     // MARK: Image combine
-    
     func save() {
         // Create the meme
         // need to add savedImage here
