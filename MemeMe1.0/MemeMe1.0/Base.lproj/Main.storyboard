@@ -23,14 +23,18 @@
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbM-9Q-YAC">
                                 <rect key="frame" x="260" y="445" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDm-kI-BYs">
                                 <rect key="frame" x="275" y="111" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="131" id="lc4-Cv-oUd"/>
                                 </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <variation key="default">
@@ -42,21 +46,23 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qdo-UF-he8">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Pick" id="UkA-kB-24N">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6wc-CT-UJA"/>
+                                    <barButtonItem title="Album" id="UkA-kB-24N">
                                         <connections>
                                             <action selector="pickAnImage:" destination="BYZ-38-t0r" id="PST-YA-vuR"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="175" style="plain" systemItem="fixedSpace" id="qGF-Vy-Ema"/>
-                                    <barButtonItem title="Camera" id="P87-3s-JjU">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cuY-pC-1Xp"/>
+                                    <barButtonItem title="Camera" width="61" id="P87-3s-JjU">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="Sl0-Eh-cob"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="r3m-Q7-5gT"/>
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2YL-0P-JuB" firstAttribute="centerX" secondItem="mbM-9Q-YAC" secondAttribute="centerX" id="3AW-0K-PvY"/>
                             <constraint firstItem="2YL-0P-JuB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4g6-V1-fEV"/>

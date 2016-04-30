@@ -19,10 +19,10 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     @IBOutlet weak var bottomTextField: UITextField!
     
     let memeTextAttributes = [
-        NSStrokeColorAttributeName : UIColor.greenColor(),
-        NSForegroundColorAttributeName : UIColor.orangeColor(),
+        NSStrokeColorAttributeName : UIColor.whiteColor(),
+        NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : 1.2
+        //NSStrokeWidthAttributeName : 1
     ]
     
     // MARK: Life Cycle
