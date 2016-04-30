@@ -37,6 +37,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.delegate = self
+        
+        cancelButton.enabled = false
     }
 
     override func viewWillAppear(animated: Bool) {
