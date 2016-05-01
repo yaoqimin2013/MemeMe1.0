@@ -23,8 +23,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.whiteColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        //NSStrokeWidthAttributeName : 1
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
+        // NSStrokeWidthAttributeName : 1
     ]
     
     // MARK: Life Cycle
@@ -46,14 +46,14 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        self.subscribeToKeyboardNotification()
+        subscribeToKeyboardNotification()
 
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
 
-        self.unsubsribeFromKeyboardNotification()
+        unsubsribeFromKeyboardNotification()
     }
     
     @IBAction func pickAnImage(sender: AnyObject) {
@@ -78,7 +78,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         
         let message = "My sharedMoment"
         if let image: UIImage = self.generateMemedImage() {
-            self.toSaveImage = image
+            toSaveImage = image
             let acitivityVC = UIActivityViewController.init(activityItems: [message, image], applicationActivities: nil)
             acitivityVC.completionWithItemsHandler = {acitivty, success, items, error in
                 self.save()
@@ -87,6 +87,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         }
     }
     
+    // Will use this cancel function in Meme2.0
     @IBAction func cancel(sender: AnyObject) {
     
     
@@ -117,14 +118,14 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     func keyboardWillShow(notification: NSNotification) {
         if self.bottomTextField.isFirstResponder() {
             self.view.frame.origin.y -= getKeyboardHeight(notification)
-            self.topTextField.userInteractionEnabled = false
+            topTextField.userInteractionEnabled = false
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if self.bottomTextField.isFirstResponder() {
             self.view.frame.origin.y += getKeyboardHeight(notification)
-            self.topTextField.userInteractionEnabled = true
+            topTextField.userInteractionEnabled = true
         }
     }
     
@@ -138,25 +139,34 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.imagePickerView.image = image
+            imagePickerView.image = image
         }
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: TextField Delegate
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if topTextField.isFirstResponder() {
+            topTextField.text = ""
+        }
+        if bottomTextField.isFirstResponder() {
+            bottomTextField.text = ""
+        }
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        if self.topTextField.isFirstResponder() {
-            self.topTextField.resignFirstResponder()
+        if topTextField.isFirstResponder() {
+            topTextField.resignFirstResponder()
         }
         
-        if self.bottomTextField.isFirstResponder() {
-            self.bottomTextField.resignFirstResponder()
+        if bottomTextField.isFirstResponder() {
+            bottomTextField.resignFirstResponder()
         }
         
         return true
@@ -166,7 +176,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     func save() {
         // Create the meme
         // need to add savedImage here
-        let meme = Memo(topText: self.topTextField.text!, bottomText: self.bottomTextField.text!, originalImage: self.imagePickerView.image, savedImage: self.generateMemedImage())
+        let meme = Memo(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image, savedImage: generateMemedImage())
         print(meme)
     }
     
