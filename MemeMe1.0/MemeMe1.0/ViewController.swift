@@ -34,9 +34,11 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         
         topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.delegate = self
+        topTextField.textAlignment = NSTextAlignment.Center
         
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.delegate = self
+        bottomTextField.textAlignment = NSTextAlignment.Center
         
         cancelButton.enabled = false
     }
@@ -45,10 +47,12 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         self.subscribeToKeyboardNotification()
+
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+
         self.unsubsribeFromKeyboardNotification()
     }
     
