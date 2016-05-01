@@ -20,27 +20,22 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     var toSaveImage: UIImage? = nil
     
-    let memeTextAttributes = [
-        NSStrokeColorAttributeName : UIColor.whiteColor(),
-        NSForegroundColorAttributeName : UIColor.whiteColor(),
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
-        // NSStrokeWidthAttributeName : 1
-    ]
+
     
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.delegate = self
-        topTextField.textAlignment = NSTextAlignment.Center
-        
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.delegate = self
-        bottomTextField.textAlignment = NSTextAlignment.Center
+        setupTextField(topTextField)
+        setupTextField(bottomTextField)
         
         cancelButton.enabled = false
+    }
+    
+    func setupTextField(textField: UITextField) {
+        textField.applyCustomizedSettings()
+        textField.delegate = self;
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -58,19 +53,18 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     @IBAction func pickAnImage(sender: AnyObject) {
     
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
-        presentViewController(imagePicker, animated: true) {
-            print("imagePickerView is presented. ")
-        };
+        presentImagePicker(.SavedPhotosAlbum)
     }
     
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
     
+        presentImagePicker(.Camera)
+    }
+    
+    func presentImagePicker(choseSource: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        imagePicker.sourceType = choseSource
         presentViewController(imagePicker, animated: true, completion: nil);
     }
     
