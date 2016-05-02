@@ -170,6 +170,9 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         // need to add savedImage here
         let meme = Memo(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image, savedImage: generateMemedImage())
         print(meme)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage {
