@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class ImageEditorViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var shareMomentButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
