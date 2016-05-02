@@ -111,14 +111,14 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     func keyboardWillShow(notification: NSNotification) {
         if self.bottomTextField.isFirstResponder() {
-            self.view.frame.origin.y -= getKeyboardHeight(notification)
+            self.view.frame.origin.y = getKeyboardHeight(notification) * -1
             topTextField.userInteractionEnabled = false
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if self.bottomTextField.isFirstResponder() {
-            self.view.frame.origin.y += getKeyboardHeight(notification)
+            self.view.frame.origin.y = 0
             topTextField.userInteractionEnabled = true
         }
     }
