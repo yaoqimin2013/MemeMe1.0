@@ -29,8 +29,6 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         
         setupTextField(topTextField)
         setupTextField(bottomTextField)
-        
-        cancelButton.enabled = false
     }
     
     func setupTextField(textField: UITextField) {
@@ -83,9 +81,9 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     // Will use this cancel function in Meme2.0
     @IBAction func cancel(sender: AnyObject) {
-    
-    
-    
+        if let navVC = self.navigationController {
+            navVC.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     // MARK: Observers
