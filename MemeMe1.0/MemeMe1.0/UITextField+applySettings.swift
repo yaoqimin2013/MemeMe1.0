@@ -11,8 +11,8 @@ import UIKit
 let memeTextAttributes = [
     NSStrokeColorAttributeName : UIColor.whiteColor(),
     NSForegroundColorAttributeName : UIColor.whiteColor(),
-    NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
-    // NSStrokeWidthAttributeName : 1
+    NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+    NSStrokeWidthAttributeName : -3.6
 ]
 
 extension UITextField {
