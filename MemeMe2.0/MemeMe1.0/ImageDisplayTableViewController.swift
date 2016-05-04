@@ -8,7 +8,7 @@
 
 import UIKit
 
-let tableViewWillReloadNotification = "tableViewWillReloadNotification"
+let tableViewWillReloadNotification = "tvareViewWillReloadNotification"
 
 class ImageDisplayTableViewController: UITableViewController {
     
@@ -50,7 +50,19 @@ class ImageDisplayTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // need to add codes here
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let meme = appDelegate.memes[indexPath.row]
+        
+        // Grab the DetailVC from Storyboard
+        let object: AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier("DetailViewController")
+        let detailVC = object as! DetailViewController
+        
+        // Popuate view controller with data from the selected item
+        detailVC.detailMeme = meme
+        
+        // Present the view controller using navigation
+        navigationController!.pushViewController(detailVC, animated: true)
     }
 
 }
