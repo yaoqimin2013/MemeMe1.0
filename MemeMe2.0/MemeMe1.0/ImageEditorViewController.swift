@@ -75,7 +75,7 @@ class ImageEditorViewController: UIViewController , UIImagePickerControllerDeleg
             acitivityVC.completionWithItemsHandler = {acitivty, success, items, error in
                 self.save()
             }
-            self.presentViewController(acitivityVC, animated: true, completion: nil)
+            presentViewController(acitivityVC, animated: true, completion: nil)
         }
     }
     
