@@ -18,6 +18,9 @@ class DetailViewController: UIViewController {
         imageView.image = detailMeme?.savedImage
     }
     
+    @IBAction func popViewController(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 
 
