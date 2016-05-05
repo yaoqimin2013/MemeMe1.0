@@ -17,6 +17,7 @@ class ImageEditorViewController: UIViewController , UIImagePickerControllerDeleg
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var toobar: UIToolbar!
     
     var toSaveImage: UIImage? = nil
     
@@ -177,12 +178,15 @@ class ImageEditorViewController: UIViewController , UIImagePickerControllerDeleg
     
     func generateMemedImage() -> UIImage {
         // hide toolbar and navigationbar
+        toobar.hidden = true
         
         // render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+
+        toobar.hidden = false
         
         return memedImage
     }

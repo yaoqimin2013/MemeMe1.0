@@ -60,9 +60,10 @@ class ImageDisplayTableViewController: UITableViewController {
         
         // Popuate view controller with data from the selected item
         detailVC.detailMeme = meme
-        
-        // Present the view controller using navigation
-        navigationController!.pushViewController(detailVC, animated: true)
+
+//        navigationController?.pushViewController(detailVC, animated: true)
+        let nav = UINavigationController.init(rootViewController: detailVC)
+        self.navigationController?.presentViewController(nav, animated: true, completion: nil)
     }
 
 }
