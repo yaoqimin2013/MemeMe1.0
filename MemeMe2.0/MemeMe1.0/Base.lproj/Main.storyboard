@@ -232,12 +232,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CcJ-0l-RqK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CcJ-0l-RqK">
+                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
                                 <color key="backgroundColor" red="1" green="0.49895274509855336" blue="0.2147172151047676" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CcJ-0l-RqK" firstAttribute="top" secondItem="oe3-GG-bc8" secondAttribute="topMargin" id="Emu-3q-Cqp"/>
+                            <constraint firstItem="xvs-qS-kfp" firstAttribute="top" secondItem="CcJ-0l-RqK" secondAttribute="bottom" id="bXd-MY-gLE"/>
+                            <constraint firstItem="CcJ-0l-RqK" firstAttribute="leading" secondItem="oe3-GG-bc8" secondAttribute="leadingMargin" id="n18-QJ-TZk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CcJ-0l-RqK" secondAttribute="trailing" id="ncK-gw-fIa"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="CcJ-0l-RqK" id="udH-7c-Quq"/>
