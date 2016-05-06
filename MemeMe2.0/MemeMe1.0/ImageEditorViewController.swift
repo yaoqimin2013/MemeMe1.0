@@ -40,6 +40,7 @@ class ImageEditorViewController: UIViewController , UIImagePickerControllerDeleg
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        self.tabBarController?.tabBar.hidden = true
         subscribeToKeyboardNotification()
 
     }
