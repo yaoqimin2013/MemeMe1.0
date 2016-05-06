@@ -16,7 +16,7 @@ class ImageDisplayTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.tabBarController?.tabBar.hidden = false
         tableView.reloadData()
     }
     
@@ -62,7 +62,6 @@ class ImageDisplayTableViewController: UITableViewController {
         // Popuate view controller with data from the selected item
         detailVC.detailMeme = meme
         
-        let nav = UINavigationController.init(rootViewController: detailVC)
-        self.navigationController?.presentViewController(nav, animated: true, completion: nil)
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

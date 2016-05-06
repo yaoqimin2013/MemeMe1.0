@@ -18,8 +18,9 @@ class DetailViewController: UIViewController {
         imageView.image = detailMeme?.savedImage
     }
     
-    @IBAction func popViewController(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.hidden = true
     }
 }
 

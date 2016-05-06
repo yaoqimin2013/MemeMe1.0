@@ -15,8 +15,7 @@ class ImageDisplayCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        // maybe we will write some codes here
-        
+        self.tabBarController?.tabBar.hidden = false        
     }
     
     // MARK: CollectionView Data Source Delegate

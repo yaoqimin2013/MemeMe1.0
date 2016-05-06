@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vQ3-Fe-XSf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qLU-Xo-V9J">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -184,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808" y="580"/>
+            <point key="canvasLocation" x="3397" y="466"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UfR-DG-oHA">
@@ -219,27 +219,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRm-Hg-qbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="580"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="P7S-FQ-pjC">
-            <objects>
-                <navigationController id="BwH-CI-ALi" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dFj-5l-Ihh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="ruG-9b-fg0" kind="relationship" relationship="rootViewController" id="Iow-BH-aXy"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kWz-P7-fOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2641" y="1284"/>
+            <point key="canvasLocation" x="2641" y="466"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="N5L-5D-jQn">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bce-G1-pwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="DetailViewController" id="ruG-9b-fg0" customClass="DetailViewController" customModule="MemeMe2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uah-Ue-Szi"/>
@@ -263,47 +248,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xRl-jH-Kh6">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="iq5-cu-vkJ">
-                            <connections>
-                                <action selector="popViewController:" destination="ruG-9b-fg0" id="TA7-Yc-5EF"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ZRP-jr-Q2d"/>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="CcJ-0l-RqK" id="udH-7c-Quq"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bce-G1-pwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3464" y="1284"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="5IC-op-6wS">
-            <objects>
-                <navigationController id="vQ3-Fe-XSf" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a4H-U2-UTf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="qLU-Xo-V9J" kind="relationship" relationship="rootViewController" id="984-eb-wJ6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Tz-iE-Glu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-721" y="1607"/>
+            <point key="canvasLocation" x="2560" y="1284"/>
         </scene>
         <!--Sent Memes-->
         <scene sceneID="QLl-qN-MsC">
             <objects>
                 <tabBarController id="qLU-Xo-V9J" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Sent Memes" id="3y6-cw-ovS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XR3-tr-AL4">
-                            <connections>
-                                <segue destination="g5M-jW-0fN" kind="presentation" id="QyM-7f-nLf"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XR3-tr-AL4"/>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="DRd-dG-Nru">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -404,7 +363,13 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" image="table" id="Gsm-wX-cNO"/>
-                    <navigationItem key="navigationItem" id="FB2-5z-K6g"/>
+                    <navigationItem key="navigationItem" id="FB2-5z-K6g">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Aab-xp-vKN">
+                            <connections>
+                                <segue destination="g5M-jW-0fN" kind="show" id="a0x-Jo-CWH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tir-Pg-zc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
