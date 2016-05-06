@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141BBD611CDC3C92000E9B76 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141BBD601CDC3C92000E9B76 /* ImageViewCell.swift */; };
 		1436702F1CD6AA93001BBB16 /* UITextField+applySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436702E1CD6AA93001BBB16 /* UITextField+applySettings.swift */; };
 		145880221CD9A4ED00C4F1E4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145880211CD9A4ED00C4F1E4 /* DetailViewController.swift */; };
+		145880241CDAEB6000C4F1E4 /* ImageDisplayCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145880231CDAEB6000C4F1E4 /* ImageDisplayCollectionViewController.swift */; };
 		14A021C21CD70776008AF67D /* ImageDisplayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A021C11CD70776008AF67D /* ImageDisplayTableViewController.swift */; };
 		14B3C7151CD1BB84009892D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3C7141CD1BB84009892D5 /* AppDelegate.swift */; };
 		14B3C7171CD1BB84009892D5 /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3C7161CD1BB84009892D5 /* ImageEditorViewController.swift */; };
@@ -19,8 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		141BBD601CDC3C92000E9B76 /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		1436702E1CD6AA93001BBB16 /* UITextField+applySettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+applySettings.swift"; sourceTree = "<group>"; };
 		145880211CD9A4ED00C4F1E4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		145880231CDAEB6000C4F1E4 /* ImageDisplayCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDisplayCollectionViewController.swift; sourceTree = "<group>"; };
 		14A021C11CD70776008AF67D /* ImageDisplayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDisplayTableViewController.swift; sourceTree = "<group>"; };
 		14B3C7111CD1BB84009892D5 /* MemeMe2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B3C7141CD1BB84009892D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				14B3C7141CD1BB84009892D5 /* AppDelegate.swift */,
+				14B3C7181CD1BB84009892D5 /* Main.storyboard */,
 				14E2117E1CD5357E00C76238 /* Controller */,
 				14E2117F1CD5358E00C76238 /* Model */,
 			);
@@ -77,7 +82,9 @@
 				14B3C7161CD1BB84009892D5 /* ImageEditorViewController.swift */,
 				1436702E1CD6AA93001BBB16 /* UITextField+applySettings.swift */,
 				14A021C11CD70776008AF67D /* ImageDisplayTableViewController.swift */,
+				145880231CDAEB6000C4F1E4 /* ImageDisplayCollectionViewController.swift */,
 				145880211CD9A4ED00C4F1E4 /* DetailViewController.swift */,
+				141BBD601CDC3C92000E9B76 /* ImageViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -96,7 +103,6 @@
 				14B3C71B1CD1BB84009892D5 /* Assets.xcassets */,
 				14B3C71D1CD1BB84009892D5 /* LaunchScreen.storyboard */,
 				14B3C7201CD1BB84009892D5 /* Info.plist */,
-				14B3C7181CD1BB84009892D5 /* Main.storyboard */,
 			);
 			name = Support;
 			path = MemeMe1.0;
@@ -176,7 +182,9 @@
 			files = (
 				14E2117D1CD5357400C76238 /* Memo.swift in Sources */,
 				14B3C7171CD1BB84009892D5 /* ImageEditorViewController.swift in Sources */,
+				145880241CDAEB6000C4F1E4 /* ImageDisplayCollectionViewController.swift in Sources */,
 				14B3C7151CD1BB84009892D5 /* AppDelegate.swift in Sources */,
+				141BBD611CDC3C92000E9B76 /* ImageViewCell.swift in Sources */,
 				14A021C21CD70776008AF67D /* ImageDisplayTableViewController.swift in Sources */,
 				145880221CD9A4ED00C4F1E4 /* DetailViewController.swift in Sources */,
 				1436702F1CD6AA93001BBB16 /* UITextField+applySettings.swift in Sources */,

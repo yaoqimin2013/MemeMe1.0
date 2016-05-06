@@ -41,10 +41,11 @@ class ImageDisplayTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let meme = appDelegate.memes[indexPath.row]
-        if let img = meme.savedImage, let topTxt = meme.topText, let bottomTxt = meme.bottomText {
-            cell.imageView?.image = img
-            cell.textLabel?.text = "\(topTxt)...\(bottomTxt)"
+        if let meme = appDelegate.memes[indexPath.item] {
+            if let img = meme.savedImage, let topTxt = meme.topText, let bottomTxt = meme.bottomText {
+                cell.imageView?.image = img
+                cell.textLabel?.text = "\(topTxt)...\(bottomTxt)"
+            }
         }
         return cell
     }
