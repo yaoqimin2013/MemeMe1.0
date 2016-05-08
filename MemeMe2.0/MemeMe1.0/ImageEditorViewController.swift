@@ -39,6 +39,10 @@ class ImageEditorViewController: UIViewController , UIImagePickerControllerDeleg
         super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         self.tabBarController?.tabBar.hidden = true
+        if let img = toSaveImage {
+            imagePickerView.image = img
+        }
+        
         subscribeToKeyboardNotification()
 
     }
@@ -74,17 +78,14 @@ class ImageEditorViewController: UIViewController , UIImagePickerControllerDeleg
             let acitivityVC = UIActivityViewController.init(activityItems: [message, image], applicationActivities: nil)
             acitivityVC.completionWithItemsHandler = {acitivty, success, items, error in
                 self.save()
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.navigationController?.popViewControllerAnimated(true)
             }
             presentViewController(acitivityVC, animated: true, completion: nil)
         }
     }
     
-    // Will use this cancel function in Meme2.0
     @IBAction func cancel(sender: AnyObject) {
-        if let navVC = self.navigationController {
-            navVC.dismissViewControllerAnimated(true, completion: nil)
-        }
+        navigationController?.popViewControllerAnimated(true)
     }
     
     // MARK: Observers

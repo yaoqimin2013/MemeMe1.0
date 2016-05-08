@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
 
+    // MARK: LifeCycle
+    
     override func viewDidLoad() {
         imageView.image = detailMeme?.savedImage
     }
@@ -21,6 +23,16 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.hidden = true
+    }
+    
+    // MARK: Segue
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "EditImageSegue" {
+            let controller = segue.destinationViewController as! ImageEditorViewController
+            controller.toSaveImage = detailMeme?.savedImage
+        }
     }
 }
 

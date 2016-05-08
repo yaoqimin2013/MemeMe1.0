@@ -184,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3397" y="466"/>
+            <point key="canvasLocation" x="2633" y="1284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UfR-DG-oHA">
@@ -203,28 +203,9 @@
             </objects>
             <point key="canvasLocation" x="1061" y="1997"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Cee-qJ-kvT">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g5M-jW-0fN" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PnL-8P-3ZH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wxg-Rp-tfx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QRm-Hg-qbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2641" y="466"/>
-        </scene>
         <!--Detail View Controller-->
         <scene sceneID="N5L-5D-jQn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bce-G1-pwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="DetailViewController" id="ruG-9b-fg0" customClass="DetailViewController" customModule="MemeMe2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uah-Ue-Szi"/>
@@ -250,7 +231,7 @@
                     <navigationItem key="navigationItem" id="xRl-jH-Kh6">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ZRP-jr-Q2d">
                             <connections>
-                                <segue destination="g5M-jW-0fN" kind="show" id="E8A-Zd-q04"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="EditImageSegue" id="2IS-X1-f59"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -258,6 +239,7 @@
                         <outlet property="imageView" destination="CcJ-0l-RqK" id="udH-7c-Quq"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bce-G1-pwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1808" y="466"/>
         </scene>
@@ -324,7 +306,7 @@
                     <navigationItem key="navigationItem" id="KCW-7f-bbl">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="P4R-YN-Mgh">
                             <connections>
-                                <segue destination="g5M-jW-0fN" kind="show" id="GeC-dO-Ati"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="us7-J8-ODD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -353,7 +335,7 @@
             </objects>
             <point key="canvasLocation" x="1052" y="1284"/>
         </scene>
-        <!--Item-->
+        <!--Image Display Table View Controller-->
         <scene sceneID="MQD-3g-0by">
             <objects>
                 <tableViewController id="GJc-B9-jrT" customClass="ImageDisplayTableViewController" customModule="MemeMe2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -376,11 +358,11 @@
                             <outlet property="delegate" destination="GJc-B9-jrT" id="5w5-R5-Jdr"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" image="table" id="Gsm-wX-cNO"/>
+                    <tabBarItem key="tabBarItem" title="" image="table" id="Gsm-wX-cNO"/>
                     <navigationItem key="navigationItem" id="FB2-5z-K6g">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Aab-xp-vKN">
                             <connections>
-                                <segue destination="g5M-jW-0fN" kind="show" id="a0x-Jo-CWH"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="BYS-WW-DCo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -413,6 +395,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GeC-dO-Ati"/>
+        <segue reference="BYS-WW-DCo"/>
     </inferredMetricsTieBreakers>
 </document>

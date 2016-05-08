@@ -10,6 +10,7 @@ import UIKit
 
 class ImageDisplayCollectionViewController: UICollectionViewController {
     
+    var appDelegate: AppDelegate!
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
@@ -26,6 +27,8 @@ class ImageDisplayCollectionViewController: UICollectionViewController {
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSizeMake(dimension, dimension)
+        
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -42,8 +45,6 @@ class ImageDisplayCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
         return appDelegate.memes.count
     }
     
@@ -52,9 +53,7 @@ class ImageDisplayCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("imageCollectionViewCell", forIndexPath: indexPath) as! ImageViewCell
-    
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
+            
         if let meme = appDelegate.memes[indexPath.row] {
             
             if let img = meme.savedImage {
@@ -67,8 +66,6 @@ class ImageDisplayCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         if let meme = appDelegate.memes[indexPath.row] {
         

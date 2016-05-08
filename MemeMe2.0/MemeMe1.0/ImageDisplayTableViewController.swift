@@ -16,8 +16,13 @@ class ImageDisplayTableViewController: UITableViewController {
     
     // Mark: Life Cycle
     
+    var appDelegate: AppDelegate!
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
         self.tabBarController?.tabBar.hidden = false
         tableView.reloadData()
     }
@@ -42,7 +47,6 @@ class ImageDisplayTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         if let meme = appDelegate.memes[indexPath.item] {
             if let img = meme.savedImage, let topTxt = meme.topText, let bottomTxt = meme.bottomText {
                 cell.imageView?.image = img
@@ -54,7 +58,6 @@ class ImageDisplayTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let meme = appDelegate.memes[indexPath.row]
         
         // Grab the DetailVC from Storyboard
