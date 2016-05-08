@@ -18,6 +18,8 @@ class ImageDisplayCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor.whiteColor()
+        
         let space: CGFloat = 3.0
         let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
         
@@ -28,7 +30,8 @@ class ImageDisplayCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.hidden = false        
+        self.tabBarController?.tabBar.hidden = false
+        self.collectionView?.reloadData()
     }
     
     // MARK: CollectionView Data Source Delegate

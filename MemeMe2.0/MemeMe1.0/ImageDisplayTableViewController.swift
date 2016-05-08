@@ -8,6 +8,8 @@
 
 import UIKit
 
+let kCellHeight: CGFloat = 60
+
 let tableViewWillReloadNotification = "tvareViewWillReloadNotification"
 
 class ImageDisplayTableViewController: UITableViewController {
@@ -32,7 +34,7 @@ class ImageDisplayTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60
+        return kCellHeight
     }
     
     // MARK: TableView Delegate

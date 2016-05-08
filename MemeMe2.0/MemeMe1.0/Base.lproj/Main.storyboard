@@ -289,6 +289,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Yte-rU-29g">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oTI-BJ-Yes">
                             <size key="itemSize" width="138" height="130"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -320,7 +321,13 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="" image="collection" id="3qC-x8-OPX"/>
-                    <navigationItem key="navigationItem" id="KCW-7f-bbl"/>
+                    <navigationItem key="navigationItem" id="KCW-7f-bbl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="P4R-YN-Mgh">
+                            <connections>
+                                <segue destination="g5M-jW-0fN" kind="show" id="GeC-dO-Ati"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="flowLayout" destination="oTI-BJ-Yes" id="gJL-qm-AKc"/>
                     </connections>
@@ -406,6 +413,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="E8A-Zd-q04"/>
+        <segue reference="GeC-dO-Ati"/>
     </inferredMetricsTieBreakers>
 </document>
