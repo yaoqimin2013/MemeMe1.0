@@ -321,6 +321,9 @@
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="" image="collection" id="3qC-x8-OPX"/>
                     <navigationItem key="navigationItem" id="KCW-7f-bbl"/>
+                    <connections>
+                        <outlet property="flowLayout" destination="oTI-BJ-Yes" id="gJL-qm-AKc"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w78-gt-OBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
