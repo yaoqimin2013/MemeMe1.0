@@ -248,14 +248,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xRl-jH-Kh6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ZRP-jr-Q2d"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ZRP-jr-Q2d">
+                            <connections>
+                                <segue destination="g5M-jW-0fN" kind="show" id="E8A-Zd-q04"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="CcJ-0l-RqK" id="udH-7c-Quq"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2560" y="1284"/>
+            <point key="canvasLocation" x="1808" y="466"/>
         </scene>
         <!--Sent Memes-->
         <scene sceneID="QLl-qN-MsC">
@@ -375,9 +379,30 @@
             </objects>
             <point key="canvasLocation" x="1808" y="1284"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dNi-H7-8Su">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cAX-U1-ZTV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IvC-h9-q8t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ruG-9b-fg0" kind="relationship" relationship="rootViewController" id="Qgb-EV-stT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5mI-p1-qzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="466"/>
+        </scene>
     </scenes>
     <resources>
         <image name="collection" width="30" height="30"/>
         <image name="table" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="E8A-Zd-q04"/>
+    </inferredMetricsTieBreakers>
 </document>

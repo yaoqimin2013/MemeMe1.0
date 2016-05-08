@@ -21,8 +21,6 @@ class ImageEditorViewController: UIViewController , UIImagePickerControllerDeleg
     
     var toSaveImage: UIImage? = nil
     
-
-    
     // MARK: Life Cycle
     
     override func viewDidLoad() {
@@ -174,7 +172,10 @@ class ImageEditorViewController: UIViewController , UIImagePickerControllerDeleg
         print(meme)
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.memes.append(meme)
+        
+        if let _ = meme.originalImage {
+            appDelegate.memes.append(meme)
+        }
     }
     
     func generateMemedImage() -> UIImage {
